@@ -2,12 +2,17 @@
 
 void* ft_memset(void* ptr, int value, size_t num)
 {
-  typedef unsigned char t_byte;
-  while (num--)
+  t_byte  *p;
+  size_t  i;
+
+  p = ptr;
+  i = 0;
+  while (i < num)
   {
-   ((t_byte *)ptr)[num] = (t_byte)value;
+   p[i] = (t_byte)value;
+   i++;
   }
-  return ptr;
+  return p;
 }
 
 // #include <stdio.h>

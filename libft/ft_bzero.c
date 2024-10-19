@@ -1,21 +1,25 @@
 #include "libft.h"
 void  ft_bzero(void *s, size_t len)
 {
-  unsigned char *p = s;
-  while(len--)
-  {
-    *p++ = 0;
-  }
-}
+  char  *str;
+  size_t  i;
 
-#include <stdio.h>
-int main()
-{
-  char buffer[20];
-  ft_bzero(buffer, sizeof(buffer));
-  for (int i = 0; i < sizeof(buffer); i++)
+  i = 0;
+  str = s;
+  while(i < len)
   {
-    printf("%d ", buffer[i]);
+    str[i] = 0;
+    i++;
   }
-  return 0;
 }
+// #include <stdio.h>
+// int main()
+// {
+//   char buffer[20];
+//   ft_bzero(buffer, sizeof(buffer));
+//   for (int i = 0; i < sizeof(buffer); i++)
+//   {
+//     printf("%d ", buffer[i]);
+//   }
+//   return 0;
+// }
