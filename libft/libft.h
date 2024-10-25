@@ -8,4 +8,9 @@ typedef unsigned char t_byte;
 void  *ft_memset(void* ptr, int value, size_t num);
 void  ft_bzero(void *s, size_t len);
 void  ft_memcpy(t_byte *des, t_byte *src, size_t len);
+void *ft_memccpy(void *des, const void *src, int c, size_t size);
+void *ft_memmove(void *dest_str, const void *src_str, size_t numBytes);
+void *ft_memchr(const void *str, int c, size_t n);
+int ft_memcmp(const void *str1, const void* str2, size_t n);
+
 #endif

@@ -4,7 +4,7 @@ void *ft_memmove(void *dest_str, const void *src_str, size_t numBytes)
 {
   unsigned char *dest = (unsigned char *)dest_str;
   const unsigned char *src = (const unsigned char *)src_str;
-
+  
   if (dest == src)
     return dest;
   if (dest < src)
