@@ -1,14 +1,20 @@
 #include "libft.h"
-void  ft_memcpy(t_byte *des, t_byte *src, size_t len)
+void  *ft_memcpy(void *des, const void *src, size_t len)
 {
   size_t  i;
 
   i = 0;
-  while (i < len)
+  if (!des && !src)
+		return (NULL);
+  if(des != src)
   {
-    des[i] = src[i];
+    while (i < len)
+    {
+    ((unsigned char *)des)[i] = ((unsigned char *)src)[i];
     i++;
+    }
   }
+  return (des);
 }
 // #include <stdio.h>
 
