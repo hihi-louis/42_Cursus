@@ -19,4 +19,5 @@ char	*ft_strdup(const char *src);
 char *ft_strcat(char *des, const char *source);
 
 size_t	ft_strlen(const char *str);
-#endif
+size_t ft_strlcat(char *des, const char *src, size_t sizeOfDes);
+#endif`
