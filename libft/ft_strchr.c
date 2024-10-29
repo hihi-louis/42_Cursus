@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tripham <tripham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 16:43:19 by tripham           #+#    #+#             */
-/*   Updated: 2024/10/29 17:34:54 by tripham          ###   ########.fr       */
+/*   Created: 2024/10/29 17:45:03 by tripham           #+#    #+#             */
+/*   Updated: 2024/10/29 18:23:38 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcpy(char *des, const char * src, size_t size)
+char *ft_strchr(const char *s, int c)
 {
-    size_t  i;
+    int i;
+    char chr;
 
     i = 0;
-    while (src[i] && i < size)
+    chr = (char) c;
+    while(s[i])
     {
-            des[i] = src[i];
-            i++;
-    }
-    while(i < size)
-    {
-        des[i] = '\0';
+        if(chr == s[i])
+            return ((char *) &s[i]);
         i++;
     }
-        return (ft_strlen(des));
+    return NULL;
 }
 
 // int main()
 // {
-//     char src[] = "Hello";
-//     char des[] = "aha ";
-
-//     size_t res = ft_strlcpy(des, src, sizeof(src));
-//     printf("%zu", res);
+//     char *str = "ahaha quan que";
+//     int c = ' ';
+//     printf("%s",  ft_strchr(str, c));
 //     return 0;
+
 // }

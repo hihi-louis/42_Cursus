@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tripham <tripham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 16:43:19 by tripham           #+#    #+#             */
-/*   Updated: 2024/10/29 17:34:54 by tripham          ###   ########.fr       */
+/*   Created: 2024/10/29 19:12:20 by tripham           #+#    #+#             */
+/*   Updated: 2024/10/29 20:05:40 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcpy(char *des, const char * src, size_t size)
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    size_t  i;
+    size_t i;
 
     i = 0;
-    while (src[i] && i < size)
+    while((s1[i] || s2[i]) && (s1[i] == s2[i]) && i < n)
     {
-            des[i] = src[i];
-            i++;
-    }
-    while(i < size)
-    {
-        des[i] = '\0';
         i++;
     }
-        return (ft_strlen(des));
+    if(n == 0)
+        return (0);
+    else
+    {
+        return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+    }
 }
 
 // int main()
 // {
-//     char src[] = "Hello";
-//     char des[] = "aha ";
-
-//     size_t res = ft_strlcpy(des, src, sizeof(src));
-//     printf("%zu", res);
+//     char str1[] = "ABCD";
+//     char str2[] = "AbCDf";
+//     printf("%d", ft_strncmp(str1, str2, 3));
 //     return 0;
 // }

@@ -11,10 +11,10 @@ int ft_isalnum(int c)
     return (0);
 }
 
-int main()
-{
-    char  c = '9';
-    char result = ft_isalnum(c);
-    printf("The result is %d\n", result);
-    return 0;
-}
+// int main()
+// {
+//     char  c = '9';
+//     char result = ft_isalnum(c);
+//     printf("The result is %d\n", result);
+//     return 0;
+// }

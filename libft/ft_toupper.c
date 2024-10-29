@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tripham <tripham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 16:43:19 by tripham           #+#    #+#             */
-/*   Updated: 2024/10/29 17:34:54 by tripham          ###   ########.fr       */
+/*   Created: 2024/10/29 17:35:58 by tripham           #+#    #+#             */
+/*   Updated: 2024/10/29 17:41:41 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcpy(char *des, const char * src, size_t size)
+int ft_toupper(int c)
 {
-    size_t  i;
-
-    i = 0;
-    while (src[i] && i < size)
+    if(c >= 97 && c <= 122)
     {
-            des[i] = src[i];
-            i++;
+        c -= 32;
     }
-    while(i < size)
-    {
-        des[i] = '\0';
-        i++;
-    }
-        return (ft_strlen(des));
+    return (c);
 }
 
 // int main()
 // {
-//     char src[] = "Hello";
-//     char des[] = "aha ";
-
-//     size_t res = ft_strlcpy(des, src, sizeof(src));
-//     printf("%zu", res);
+//     char c = 'a';
+    
+//     printf("%c", ft_toupper(c));
 //     return 0;
 // }
