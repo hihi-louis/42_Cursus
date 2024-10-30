@@ -32,5 +32,6 @@ int ft_isprint(int c);
 int ft_tolower(int c);
 int ft_toupper(int c);
 int ft_atoi(const char *str);
+void    *ft_calloc(size_t count, size_t size);
 
 #endif
