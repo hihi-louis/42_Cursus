@@ -24,6 +24,7 @@ char    *ft_strnstr(const char *big, const char *small, size_t len);
 char *ft_substr(const char *s, unsigned int start, size_t len);
 size_t  ft_strlen(const char *str);
 size_t  ft_strlcat(char *des, const char *src, size_t sizeOfDes);
+size_t  ft_strlcpy(char *des, const char * src, size_t size);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
 int ft_isalpha(int c);
 int ft_isdigit(int c);
