@@ -1,36 +1,116 @@
 #include "libft.h"
 
-size_t  count_tokens(char const *s, char delimeter)
+static size_t ft_countword(const char *s, char c)
 {
-    size_t tokens;
-    bool inside_tokens;
+    size_t count;
 
-    tokens = 0;
+    count = 0;
+    if(!s || )
+        return (NULL);
     while(*s)
     {
-        inside_tokens = false;
-
-        while(*s ==  delimeter && *s)
+        while(*s == c && *s)
             s++;
-        while(*s != delimeter && *s)
-        { 
-            if(!inside_tokens)
-            {
-                tokens++;
-                inside_tokens = true;
-            }
+        if(*s)
+            count++;
+        while(*s != c && *s)
             s++;
-        }
     }
-    return (tokens);
+    return (count);
+}
+static char *ft_extract_word(char const *s, char c)
+{
+    char *word;
+    size_t  len;
+
+    len = 0;
+    while(s[len] && s[len] != c)
+        len++;
+    word = ft_substr(s, 0, len);
+    return (0);
+}
+static void ft_free_word(char **split, size_t count)
+{
+    size_t  i;
+
+    i = 0;
+    while(i < count)
+    {
+        free(split[i]);
+        i++;
+    }
+    free(split);
+}
+char	**ft_split(char const *s, char c)
+{
+	char	**lst;
+	size_t	word_len;
+	int		i;
+
+	lst = (char **)malloc((ft_countword(s, c) + 1) * sizeof(char *));
+	if (!s || !lst)
+		return (0);
+	i = 0;
+	while (*s)
+	{
+		while (*s == c && *s)
+			s++;
+		if (*s)
+		{
+			if (!ft_strchr(s, c))
+				word_len = ft_strlen(s);
+			else
+				word_len = ft_strchr(s, c) - s;
+			lst[i++] = ft_substr(s, 0, word_len);
+			s += word_len;
+		}
+	}
+	lst[i] = NULL;
+	return (lst);
 }
 
-char **ft_split(const char *s, char c)
+int main()
 {
-    // 1) Count the words or tokens in str
-    // 2) Allocated memory for the array of strings
-    // 3)cpy the token in the correct position
-    size_t tokens;
-    tokens = 0;
-    tokens = count_tokens(s, c);
+    char *s = "Hello What The hell MAn";
+    char **v = ft_split(s, ' ');
+    while(*v)
+    {
+        printf("%s\n", *v++);
+    }
+    return 0;
 }
+
+
+// char **ft_split(char const *s, char c)
+// {
+//     char **result;
+//     size_t word_count;
+//     size_t i;
+
+//     if (!s)
+//         return (NULL);
+//     word_count = ft_countword(s, c);
+//     result = (char **)malloc((word_count + 1) * sizeof(char *));
+//     if (!result)
+//         return (NULL);
+//     i = 0;
+//     while (*s)
+//     {
+//         while (*s == c)
+//             s++;
+//         if (*s)
+//         {
+//             result[i] = ft_extract_word(s, c);
+//             if (!result[i])
+//             {
+//                 ft_free_split(result, i);
+//                 return (NULL);
+//             }
+//             i++;
+//             while (*s && *s != c)
+//                 s++;
+//         }
+//     }
+//     result[i] = NULL;
+//     return (result);
+// }
