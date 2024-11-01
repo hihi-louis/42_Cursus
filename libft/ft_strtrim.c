@@ -26,8 +26,8 @@ char *ft_strtrim(char const *s1, char const *set)
     end = ft_strlen(s1);
     while (end > start && is_in_set(s1[end - 1], set))
         end--;
-
-    new = ft_calloc(end - start + 1, sizeof(char));
+    end = end + 1;
+    new = ft_calloc(end - start, sizeof(char));
     if (!new)
         return (NULL);
 
@@ -37,7 +37,7 @@ char *ft_strtrim(char const *s1, char const *set)
 
 // int main()
 // {
-//     char *s1 = "ababaaaMy name is Simonbbaaabba";
+//     char *s1 = "ababaaawhat the fuckbbaaabba";
 //     char *set = "ab";
 //     char *res = ft_strtrim(s1, set);
 //     if (res)
