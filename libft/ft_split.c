@@ -37,23 +37,13 @@ static void ft_free_word(char **split, size_t count)
     while(i < count)
     {
         free(split[i]);
+        split[i] = NULL; 
         i++;
     }
     free(split);
 }
-char **ft_split(char const *s, char c)
+static char **s_process(char const *s, char c, size_t i, char **result)
 {
-    char **result;
-    size_t word_count;
-    size_t i;
-
-    if (!s)
-        return (NULL);
-    word_count = ft_countword(s, c);
-    result = (char **)malloc((word_count + 1) * sizeof(char *));
-    if (!result)
-        return (NULL);
-    i = 0;
     while (*s)
     {
         while (*s == c)
@@ -74,63 +64,37 @@ char **ft_split(char const *s, char c)
     result[i] = NULL;
     return (result);
 }
+char **ft_split(char const *s, char c)
+{
+    char **result;
+    size_t word_count;
+    size_t i;
+
+    if (!s)
+        return (NULL);
+    word_count = ft_countword(s, c);
+    result = (char **)malloc((word_count + 1) * sizeof(char *));
+    if (!result)
+        return (NULL);
+    i = 0;
+    result = s_process(s, c, i, result);
+    return (result);
+}
 
 int main()
 {
     char *s = "Hello What The hell MAn";
     char **v = ft_split(s, ' ');
-    char **temp = v;  // Lưu con trỏ gốc để giải phóng sau này
+    size_t  i; 
 
+    i = 0;
     if (v)
     {
-        while(*v)
+        while(v[i])
         {
-            printf("%s\n", *v);
-            v++;
+            printf("%s\n", v[i]);
+            i++;
         }
-        ft_free_word(temp, ft_countword(s, ' '));  // Giải phóng bộ nhớ
-    }
+        ft_free_word(v, ft_countword(s, ' '));
     return 0;
 }
-
-// static int process_word(char **result, const char *s, char c, size_t *i)
-// {
-//     char *word;
-
-//     word = ft_extract_word(s, c);
-//     if (!word)
-//     {
-//         ft_free_word(result, *i);
-//         return (0);
-//     }
-//     result[(*i)++] = word;
-//     return (1);
-// }
-
-// char **ft_split(char const *s, char c)
-// {
-//     char **result;
-//     size_t word_count, i;
-
-//     if (!s)
-//         return (NULL);
-//     word_count = ft_countword(s, c);
-//     result = (char **)malloc((word_count + 1) * sizeof(char *));
-//     if (!result)
-//         return (NULL);
-//     i = 0;
-//     while (*s)
-//     {
-//         while (*s == c)
-//             s++;
-//         if (*s)
-//         {
-//             if (!process_word(result, s, c, &i))
-//                 return (NULL);
-//             while (*s && *s != c)
-//                 s++;
-//         }
-//     }
-//     result[i] = NULL;
-//     return (result);
-// }

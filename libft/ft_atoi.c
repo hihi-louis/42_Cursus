@@ -29,7 +29,7 @@ int ft_atoi(const char *str)
 }
 // int main()
 // {
-//     char *str = "-1542kjaasd";
+//     char *str = "-154265648745664kjaasd";
 
 //     int res = ft_atoi(str);
 //     printf("%d", res);
