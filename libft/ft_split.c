@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/03 03:57:32 by tripham           #+#    #+#             */
+/*   Updated: 2024/11/03 03:57:46 by tripham          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t ft_countword(const char *s, char c)
@@ -81,20 +93,20 @@ char **ft_split(char const *s, char c)
     return (result);
 }
 
-int main()
-{
-    char *s = "Hello What The hell MAn";
-    char **v = ft_split(s, ' ');
-    size_t  i; 
+// int main()
+// {
+//     char *s = "Hello What The hell MAn";
+//     char **v = ft_split(s, ' ');
+//     size_t  i; 
 
-    i = 0;
-    if (v)
-    {
-        while(v[i])
-        {
-            printf("%s\n", v[i]);
-            i++;
-        }
-        ft_free_word(v, ft_countword(s, ' '));
-    return 0;
-}
+//     i = 0;
+//     if (v)
+//     {
+//         while(v[i])
+//         {
+//             printf("%s\n", v[i]);
+//             i++;
+//         }
+//         ft_free_word(v, ft_countword(s, ' '));
+//     return 0;
+// }
