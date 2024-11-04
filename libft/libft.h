@@ -7,12 +7,12 @@
 
 typedef unsigned char t_byte;
 
-void  *ft_memset(void* ptr, int value, size_t num);
-void  ft_bzero(void *s, size_t len);
-void  *ft_memcpy(void *des, const void *src, size_t len);
-void *ft_memccpy(void *des, const void *src, int c, size_t size);
-void *ft_memmove(void *dest_str, const void *src_str, size_t numBytes);
-void *ft_memchr(const void *str, int c, size_t n);
+void    *ft_memset(void* ptr, int value, size_t num);
+void    ft_bzero(void *s, size_t len);
+void    *ft_memcpy(void *des, const void *src, size_t len);
+void    *ft_memccpy(void *des, const void *src, int c, size_t size);
+void    *ft_memmove(void *dest_str, const void *src_str, size_t numBytes);
+void    *ft_memchr(const void *str, int c, size_t n);
 void    *ft_calloc(size_t count, size_t size);
 
 char    *ft_strcpy(char *des, char *src, size_t size);
@@ -21,10 +21,10 @@ char    *ft_strcat(char *des, const char *source);
 char    *ft_strchr(const char *s, int c);
 char    *ft_strrchr(const char *s, int c);
 char    *ft_strnstr(const char *big, const char *small, size_t len);
-char *ft_substr(const char *s, unsigned int start, size_t len);
+char    *ft_substr(const char *s, unsigned int start, size_t len);
 char    *ft_strjoin(char const *s1, char const *s2);
 char    **ft_split(char const *s, char c);
-char **ft_split(char const *s, char c);
+char    **ft_split(char const *s, char c);
 
 size_t  ft_strlen(const char *str);
 size_t  ft_strlcat(char *des, const char *src, size_t sizeOfDes);
