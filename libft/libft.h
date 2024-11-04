@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdio.h>
+#include <unistd.h>
 
 typedef unsigned char t_byte;
 
@@ -25,6 +26,10 @@ char    *ft_substr(const char *s, unsigned int start, size_t len);
 char    *ft_strjoin(char const *s1, char const *s2);
 char    **ft_split(char const *s, char c);
 char    **ft_split(char const *s, char c);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void ft_striteri(char *s, void (*f)(unsigned int, char *));
+void ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char *s, int fd);
 
 size_t  ft_strlen(const char *str);
 size_t  ft_strlcat(char *des, const char *src, size_t sizeOfDes);
