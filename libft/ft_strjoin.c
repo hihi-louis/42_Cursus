@@ -6,7 +6,7 @@
 /*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:23:12 by tripham           #+#    #+#             */
-/*   Updated: 2024/10/30 16:48:17 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/04 18:20:44 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char    *ft_strjoin(char const *s1, char const *s2)
     size_t s2_len;
     char *str;
 
-    if(!s1 || !s2)
+    if(!s1 && !s2)
         return (NULL);
     s1_len = ft_strlen(s1);
     s2_len = ft_strlen(s2);
