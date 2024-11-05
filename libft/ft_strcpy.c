@@ -1,11 +1,11 @@
 #include "libft.h"
 
-char *ft_strcpy(char *des, char *src, size_t size)
+char *ft_strcpy(char *des, char *src)
 {
   size_t  i;
 
   i = 0;
-  while (i < size && src[i])
+  while (src[i])
   {
     des[i] = src[i];
     i++;
