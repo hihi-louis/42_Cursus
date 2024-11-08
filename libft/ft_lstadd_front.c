@@ -6,7 +6,7 @@
 /*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 22:01:47 by tripham           #+#    #+#             */
-/*   Updated: 2024/11/05 20:30:01 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/08 23:58:07 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,9 @@ void    ft_lstadd_front(t_list **lst, t_list *new)
 //     printf(" -> NULL\n");
 // }
 
-
-// void ft_lstclear(t_list **lst) {
-//     t_list *current;
-//     t_list *next_node;
-
-//     if (lst == NULL || *lst == NULL) {
-//         return; // If the list is empty or NULL, do nothing
-//     }
-
-//     current = *lst; // Start with the head of the list
-//     while (current != NULL) {
-//         next_node = current->next; // Save the next node
-//         free(current->content);     // Free the content of the current node
-//         free(current);              // Free the current node
-//         current = next_node;        // Move to the next node
-//     }
-//     *lst = NULL; // Set the head to NULL to indicate the list is cleared
+// void ft_del(void *content)
+// {
+//     free(content);
 // }
 
 // int main()
@@ -98,7 +84,7 @@ void    ft_lstadd_front(t_list **lst, t_list *new)
 //     ft_lstprint(louis); 
     
    
-//     ft_lstclear(&hihi);
+//     ft_lstclear(&hihi,ft_del);
 //     return 0;
 
 // }
