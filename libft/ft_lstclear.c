@@ -6,7 +6,7 @@
 /*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 22:50:02 by tripham           #+#    #+#             */
-/*   Updated: 2024/11/09 00:09:46 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/09 01:03:41 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 void ft_lstclear(t_list **lst, void (*del)(void *))
 {
     t_list  *node;
-    if(!lst)
+    if(!lst || !del || !(*lst))
         return ;
     while(*lst)
     {
         node = (*lst)->next;
-        ft_lstdelone(*lst,del);
+        ft_lstdelone(*lst, del);
         *lst = node;
     }
+    *lst = NULL;
 }
