@@ -6,7 +6,7 @@
 /*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 17:06:41 by tripham           #+#    #+#             */
-/*   Updated: 2024/11/04 17:53:42 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/09 15:54:23 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 // int main()
 // {
-//     char *str = "hello-there";
+//     char *str = "hello@there";
 //     char*result = ft_strmapi(str, my_func);
 //     printf("%s", result);
 // }

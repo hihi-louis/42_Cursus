@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 00:11:18 by tripham           #+#    #+#             */
-/*   Updated: 2024/11/09 01:06:51 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/09 16:28:40 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,19 @@ void    ft_lstiter(t_list *lst, void(*f)(void *))
         tpm = tpm->next; 
     }  
 }
-void    print_content(void *content)
-{
-    printf("%d ", *(int *)content);
-}
-void ft_del(void *content)
-{
-    free(content);
-}
+// void    print_content(void *content)
+// {
+//     printf("%s ->", (char *)content);
+// }
 
-int main()
-{
-    int a = 10, b = 20, c = 30;
-    t_list *node = ft_lstnew(&a);
-    node->next = ft_lstnew(&b);
-    node->next->next = ft_lstnew(&c);
-    ft_lstiter(node, print_content);
-    ft_lstclear(&node, ft_del);
-    return 0;
-}
+// int main()
+// {
+//    t_list *node1 = ft_lstnew(ft_strdup("Hello"));
+//    ft_lstadd_back(&node1, ft_lstnew(ft_strdup("Node2")));
+//    ft_lstadd_back(&node1, ft_lstnew(ft_strdup("Node3")));
+//    ft_lstadd_back(&node1, ft_lstnew(ft_strdup("Node4")));
+
+//    ft_lstiter(node1, print_content);
+//    printf("NULL");
+//    return 0;
+// }
