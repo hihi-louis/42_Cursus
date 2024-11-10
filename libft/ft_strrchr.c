@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tripham <tripham@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 18:24:15 by tripham           #+#    #+#             */
-/*   Updated: 2024/10/29 19:08:55 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/10 17:33:05 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char *ft_strrchr(const char *s, int c)
 {
     int i;
     char chr;
-    char *res;
+    // char *res;
 
     i = 0;
     chr = (char) c;
@@ -27,8 +27,8 @@ char *ft_strrchr(const char *s, int c)
         i++;
     }
     if(s[i] == c)
-        res = (char *) &s[i];
-    return res;
+        return ((char *) &s[i]);
+    return (NULL);
 }
 
 // int main(void)
