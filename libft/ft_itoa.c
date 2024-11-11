@@ -6,7 +6,7 @@
 /*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 04:22:18 by tripham           #+#    #+#             */
-/*   Updated: 2024/11/03 19:51:40 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/11 18:14:44 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,29 @@ static size_t  count_digits(int n)
 {
     size_t  i;
 
+    if (n == 0)
+        return (1);
     i = 0;
-    while(n /= 10)
+    while(n != 0)
+    {
+        n /= 10;
         i++;
+    }
+
     return (i);
 }
 char    *ft_itoa(int n)
 {
     char    *str;
     size_t  digits;
-    long int    num;
+    long    num;
 
-    num = (long int)n;
+    num = (long)n;
     digits = count_digits(n);
 
     if(n < 0)
     {
-        num *= -1;
+        num = -num;
         digits++;
     }
     
@@ -51,7 +57,7 @@ char    *ft_itoa(int n)
 
 // int main()
 // {
-//     char *str = ft_itoa(-14554464);
+//     char *str = ft_itoa(0);
 //     printf("%s\n", str);
 //     printf("%s\n", str);
 //     free(str);

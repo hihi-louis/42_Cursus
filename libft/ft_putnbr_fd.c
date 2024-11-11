@@ -6,7 +6,7 @@
 /*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 20:41:59 by tripham           #+#    #+#             */
-/*   Updated: 2024/11/04 20:49:00 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/10 19:08:42 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void    ft_putnbr_fd(int n, int fd)
 
     nbr = (long)n;
     if(nbr < 0)
-    {
+    {   
+        write(fd, "-", 1);
         nbr *= -1;
-        ft_putchar_fd('-', fd);
     }
     if(nbr > 9)
     {

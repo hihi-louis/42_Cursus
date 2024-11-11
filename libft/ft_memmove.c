@@ -1,30 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/10 19:14:14 by tripham           #+#    #+#             */
+/*   Updated: 2024/11/11 16:47:04 by tripham          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void *ft_memmove(void *dest_str, const void *src_str, size_t numBytes)
+void *ft_memmove(void *dst, const void *src, size_t len)
 {
-  unsigned char *dest = (unsigned char *)dest_str;
-  const unsigned char *src = (const unsigned char *)src_str;
+  void  *org_dst;
   
-  if (dest == src)
-    return dest;
-  if (dest < src)
+  org_dst =  dst;
+
+  if ((!dst && !src) || (dst == src))
+    return (dst);
+  if (dst < src)
   {
-    while (numBytes--)
-    {
-      *dest++ = *src++;
-    }
+    while (len--)
+      *(char *)dst++ = *(char *)src++;
   }
-  else
+  else if (dst > src)
   {
-    while (numBytes--)
-    {
-      dest += numBytes;
-      src += numBytes;
-      *--dest = *--src;
-    }
-    
+    while (len--)
+      ((char *)dst)[len] = ((char *)src)[len];
   }
-  return dest;
+  return (org_dst);
 }
 
 // #include <stdio.h>

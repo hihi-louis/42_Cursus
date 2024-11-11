@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tripham <tripham@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 21:46:58 by tripham           #+#    #+#             */
-/*   Updated: 2024/10/29 23:15:41 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/10 21:03:32 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char *ft_strnstr(const char *big, const char *small, size_t len)
 {
     size_t  sml_len;
     
+    if(!big && !len)
+        return (NULL);
     sml_len = ft_strlen(small);
     if(*small == '\0')
         return ((char *)big);

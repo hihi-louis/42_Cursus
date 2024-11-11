@@ -22,9 +22,7 @@ void    *ft_memmove(void *dest_str, const void *src_str, size_t numBytes);
 void    *ft_memchr(const void *str, int c, size_t n);
 void    *ft_calloc(size_t count, size_t size);
 
-char    *ft_strcpy(char *des, char *src);
 char    *ft_strdup(const char *src);
-char    *ft_strcat(char *des, const char *source);
 char    *ft_strchr(const char *s, int c);
 char    *ft_strrchr(const char *s, int c);
 char    *ft_strnstr(const char *big, const char *small, size_t len);
