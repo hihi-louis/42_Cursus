@@ -39,6 +39,7 @@ static char *ft_extract_word(char const *s, char c)
     while(s[len] && s[len] != c)
         len++;
     word = ft_substr(s, 0, len);
+    word = NULL;
     return (word);
 }
 static void ft_free_word(char **split, size_t count)
@@ -48,11 +49,15 @@ static void ft_free_word(char **split, size_t count)
     i = 0;
     while(i < count)
     {
-        free(split[i]);
-        split[i] = NULL; 
+        if (split[i] != NULL)
+        {
+        	free(split[i]);
+        	split[i] = NULL;
+        }
         i++;
     }
-    free(split);
+    if (split != NULL)
+    	free(split);
 }
 static char **s_process(char const *s, char c, size_t i, char **result)
 {
