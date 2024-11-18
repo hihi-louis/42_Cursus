@@ -1,43 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 21:02:47 by tripham           #+#    #+#             */
+/*   Updated: 2024/11/17 01:08:16 by tripham          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void* ft_memset(void* ptr, int value, size_t num)
+void	*ft_memset(void *ptr, int value, size_t num)
 {
-  t_byte  *p;
-  size_t  i;
+	t_byte		*p;
+	size_t		i;
 
-  p = ptr;
-  i = 0;
-  while (i < num)
-  {
-   p[i] = (t_byte)value;
-   i++;
-  }
-  return p;
+	p = (t_byte *)ptr;
+	i = 0;
+	while (i < num)
+	{
+		p[i] = (t_byte)value;
+		i++;
+	}
+	return (ptr);
 }
-
-// int main()
-// {
-//     int str[] = {3, 5, 4, 8, 6};
-//     printf("Before memset: ");
-//     for(int i = 0; i < 5; i++) {
-//         printf("%d ", str[i]);
-//     }
-//     printf("\n");
-
-//     memset(str, 'c', 2 * sizeof(int));
-//     printf("After memset: ");
-//     for(int i = 0; i < 5; i++) {
-//         printf("%d ", str[i]);
-//     }
-//     printf("\n");
-
-//     int str2[] = {3, 5, 4, 8, 6};
-//     ft_memset(str2, '2', 2 * sizeof(int));
-//     printf("After ft_memset: ");
-//     for(int i = 0; i < 5; i++) {
-//         printf("%d ", str2[i]);
-//     }
-//     printf("\n");
-
-//     return 0;
-// }

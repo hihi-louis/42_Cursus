@@ -1,20 +1,20 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 19:40:18 by tripham           #+#    #+#             */
+/*   Updated: 2024/11/16 21:02:15 by tripham          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if ((c >= 48 && c <= 57) 
-    || (c >= 65 && c <= 90) 
-    || (c >= 97 && c <= 122) )
-    {
-        return (1);
-    }
-    return (0);
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	{
+		return (1);
+	}
+	return (0);
 }
-
-// int main()
-// {
-//     char  c = '9';
-//     char result = ft_isalnum(c);
-//     printf("The result is %d\n", result);
-//     return 0;
-// }

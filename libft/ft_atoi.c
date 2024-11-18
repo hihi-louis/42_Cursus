@@ -1,37 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 19:30:02 by tripham           #+#    #+#             */
+/*   Updated: 2024/11/17 01:31:15 by tripham          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-    size_t  i;
-    int flag;
-    int result = 0;
+	int			flag;
+	long long	result;
+	long long	check;
 
-    flag = 1;
-    i = 0;
-    while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
-        i++;
-    while (str[i] == '+' || str[i] == '-')
-    {
-        if(str[i] == '-')
-            flag = 0;
-        i++;
-    }
-    while(str[i] >= '0' && str[i] <= '9')
-    {
-        result = result * 10 + (str[i] - '0');
-        i++;
-    }
-    if(flag == 0)
-    {
-        result *= -1;
-    }
-    return (result);
+	flag = 1;
+	result = 0;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '+' || *str == '-')
+	{
+		if (*str == '-')
+			flag = -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		check = result * 10 + (*str - '0');
+		if (check / 10 != result && flag == -1)
+			return (0);
+		if (check / 10 != result && flag == 1)
+			return (-1);
+		result = check;
+		str++;
+	}
+	return (result * flag);
 }
-// int main()
-// {
-//     char *str = "-154265648745664kjaasd";
-
-//     int res = ft_atoi(str);
-//     printf("%d", res);
-//     return 0;
-// }

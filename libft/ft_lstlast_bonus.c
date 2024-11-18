@@ -12,26 +12,14 @@
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    t_list *node;
+	t_list	*node;
 
-    if(!lst)
-        return (NULL);
-    node = lst;
-
-    while(node->next)
-        node = node->next;
-    
-    return (node);
+	if (!lst)
+		return (NULL);
+	node = lst;
+	while (node->next)
+		node = node->next;
+	return (node);
 }
-
-// int main()
-// {
-//     t_list *node_last = ft_lstnew("jaja");
-//     t_list *node_first = ft_lstnew("haaja");
-//     node_first->next = node_last;
-    
-//     printf("%s->%s",(char *)(node_first->content), (char *)(ft_lstlast(node_first)->content));
-//     return 0;
-// }

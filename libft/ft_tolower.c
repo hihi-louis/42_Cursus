@@ -3,27 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tripham <tripham@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tripham <tripham@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 17:42:06 by tripham           #+#    #+#             */
-/*   Updated: 2024/10/29 21:51:12 by tripham          ###   ########.fr       */
+/*   Updated: 2024/11/17 01:28:21 by tripham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if(c >= 65 && c <= 90)
-    {
-        c += 32;
-    }
-    return (c);
+	if (c >= 65 && c <= 90)
+	{
+		c += 32;
+	}
+	return (c);
 }
-
-// int main()
-// {
-//     char c = 'A';
-//     printf("%c", ft_tolower(c));
-//     return 0;
-// }
